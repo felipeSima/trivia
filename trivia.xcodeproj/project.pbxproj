@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		026C8D99FF44918E330F619C /* Pods_trivia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C1B716190EE262005F5EED9 /* Pods_trivia.framework */; };
 		9D81A37F224DAFBE00AA96BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D81A37E224DAFBE00AA96BA /* AppDelegate.swift */; };
 		9D81A381224DAFBE00AA96BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D81A380224DAFBE00AA96BA /* ViewController.swift */; };
 		9D81A384224DAFBE00AA96BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D81A382224DAFBE00AA96BA /* Main.storyboard */; };
@@ -15,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B5DFAC5AA19335AC0A9A0C2 /* Pods-trivia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trivia.release.xcconfig"; path = "Pods/Target Support Files/Pods-trivia/Pods-trivia.release.xcconfig"; sourceTree = "<group>"; };
+		5C1B716190EE262005F5EED9 /* Pods_trivia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_trivia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D81A37B224DAFBE00AA96BA /* trivia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = trivia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D81A37E224DAFBE00AA96BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D81A380224DAFBE00AA96BA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		9D81A385224DAFC000AA96BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D81A388224DAFC000AA96BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D81A38A224DAFC000AA96BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4D46E4867DE9E942296E087 /* Pods-trivia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trivia.debug.xcconfig"; path = "Pods/Target Support Files/Pods-trivia/Pods-trivia.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				026C8D99FF44918E330F619C /* Pods_trivia.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		84D3E475B1238DB63A00E360 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D4D46E4867DE9E942296E087 /* Pods-trivia.debug.xcconfig */,
+				2B5DFAC5AA19335AC0A9A0C2 /* Pods-trivia.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		9D81A372224DAFBE00AA96BA = {
 			isa = PBXGroup;
 			children = (
 				9D81A37D224DAFBE00AA96BA /* trivia */,
 				9D81A37C224DAFBE00AA96BA /* Products */,
+				84D3E475B1238DB63A00E360 /* Pods */,
+				EEAA909F6E1BA76F229F554F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,6 +104,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		EEAA909F6E1BA76F229F554F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5C1B716190EE262005F5EED9 /* Pods_trivia.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -95,9 +119,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9D81A38D224DAFC000AA96BA /* Build configuration list for PBXNativeTarget "trivia" */;
 			buildPhases = (
+				894206EA7ED08EF6326B8FA4 /* [CP] Check Pods Manifest.lock */,
 				9D81A377224DAFBE00AA96BA /* Sources */,
 				9D81A378224DAFBE00AA96BA /* Frameworks */,
 				9D81A379224DAFBE00AA96BA /* Resources */,
+				F530301AEDCB39CCA630E02E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -153,6 +179,57 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		894206EA7ED08EF6326B8FA4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-trivia-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F530301AEDCB39CCA630E02E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-trivia/Pods-trivia-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-trivia/Pods-trivia-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9D81A377224DAFBE00AA96BA /* Sources */ = {
@@ -304,6 +381,7 @@
 		};
 		9D81A38E224DAFC000AA96BA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4D46E4867DE9E942296E087 /* Pods-trivia.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -322,6 +400,7 @@
 		};
 		9D81A38F224DAFC000AA96BA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B5DFAC5AA19335AC0A9A0C2 /* Pods-trivia.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
