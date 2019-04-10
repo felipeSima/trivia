@@ -8,23 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		026C8D99FF44918E330F619C /* Pods_trivia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C1B716190EE262005F5EED9 /* Pods_trivia.framework */; };
+		9D63FF8922543C760020A1C1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D63FF8822543C760020A1C1 /* LoginViewController.swift */; };
+		9D63FF8B22543CD50020A1C1 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D63FF8A22543CD50020A1C1 /* RegisterViewController.swift */; };
+		9D63FF8D22543CE80020A1C1 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D63FF8C22543CE80020A1C1 /* GameViewController.swift */; };
 		9D81A37F224DAFBE00AA96BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D81A37E224DAFBE00AA96BA /* AppDelegate.swift */; };
-		9D81A381224DAFBE00AA96BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D81A380224DAFBE00AA96BA /* ViewController.swift */; };
 		9D81A384224DAFBE00AA96BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D81A382224DAFBE00AA96BA /* Main.storyboard */; };
 		9D81A386224DAFC000AA96BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D81A385224DAFC000AA96BA /* Assets.xcassets */; };
 		9D81A389224DAFC000AA96BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D81A387224DAFC000AA96BA /* LaunchScreen.storyboard */; };
+		9DC82FF5224FFB45005091D8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9DC82FF4224FFB45005091D8 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2B5DFAC5AA19335AC0A9A0C2 /* Pods-trivia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trivia.release.xcconfig"; path = "Pods/Target Support Files/Pods-trivia/Pods-trivia.release.xcconfig"; sourceTree = "<group>"; };
 		5C1B716190EE262005F5EED9 /* Pods_trivia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_trivia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D63FF8822543C760020A1C1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		9D63FF8A22543CD50020A1C1 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		9D63FF8C22543CE80020A1C1 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		9D81A37B224DAFBE00AA96BA /* trivia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = trivia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D81A37E224DAFBE00AA96BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9D81A380224DAFBE00AA96BA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9D81A383224DAFBE00AA96BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9D81A385224DAFC000AA96BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D81A388224DAFC000AA96BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D81A38A224DAFC000AA96BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9DC82FF4224FFB45005091D8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D4D46E4867DE9E942296E087 /* Pods-trivia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-trivia.debug.xcconfig"; path = "Pods/Target Support Files/Pods-trivia/Pods-trivia.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,6 +80,7 @@
 				9D81A390224DAFD300AA96BA /* Controller */,
 				9D81A391224DB05200AA96BA /* View */,
 				9D81A385224DAFC000AA96BA /* Assets.xcassets */,
+				9DC82FF4224FFB45005091D8 /* GoogleService-Info.plist */,
 				9D81A38A224DAFC000AA96BA /* Info.plist */,
 			);
 			path = trivia;
@@ -83,7 +90,9 @@
 			isa = PBXGroup;
 			children = (
 				9D81A37E224DAFBE00AA96BA /* AppDelegate.swift */,
-				9D81A380224DAFBE00AA96BA /* ViewController.swift */,
+				9D63FF8822543C760020A1C1 /* LoginViewController.swift */,
+				9D63FF8A22543CD50020A1C1 /* RegisterViewController.swift */,
+				9D63FF8C22543CE80020A1C1 /* GameViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -173,6 +182,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D81A389224DAFC000AA96BA /* LaunchScreen.storyboard in Resources */,
+				9DC82FF5224FFB45005091D8 /* GoogleService-Info.plist in Resources */,
 				9D81A386224DAFC000AA96BA /* Assets.xcassets in Resources */,
 				9D81A384224DAFBE00AA96BA /* Main.storyboard in Resources */,
 			);
@@ -213,16 +223,24 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-trivia/Pods-trivia-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -236,7 +254,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D81A381224DAFBE00AA96BA /* ViewController.swift in Sources */,
+				9D63FF8D22543CE80020A1C1 /* GameViewController.swift in Sources */,
+				9D63FF8B22543CD50020A1C1 /* RegisterViewController.swift in Sources */,
+				9D63FF8922543C760020A1C1 /* LoginViewController.swift in Sources */,
 				9D81A37F224DAFBE00AA96BA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
