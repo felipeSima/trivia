@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SVProgressHUD
 
 class LoginViewController: UIViewController {
 
@@ -29,15 +30,49 @@ class LoginViewController: UIViewController {
     @IBAction func facebookButtonPressed(_ sender: Any) {
     }
     @IBAction func loginButtonPressed(_ sender: Any) {
+        
+        let alertController = UIAlertController(title: "Alert", message: "Invalid Username/Password", preferredStyle: .alert)
+
+        let dismissAction = UIAlertAction(title: "Dismiss", style: .cancel) { (dismissAction) in
+            print("Cancel Button pressed")
+        }
+
+        
+        SVProgressHUD.show()
+        
+        Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (resut, error) in
+            
+            if let error = error {
+                
+                alertController.addAction(dismissAction)
+
+                self.present(alertController, animated: true, completion: nil)
+                
+                print("There was an error to log the user in: ", error.localizedDescription)
+                
+                SVProgressHUD.dismiss()
+                
+                return
+                
+            }
+            
+            else {
+                
+                self.performSegue(withIdentifier: "goToGame", sender: self)
+                
+                SVProgressHUD.dismiss()
+                
+                print("login successful")
+                
+            }
+            
+        }
+        
     }
     @IBAction func registerButtonPressed(_ sender: Any) {
     }
     
      // MARK: -API
-    func loginUser(withEmail email : String, password : String){
-        print("Login")
-        
-    }
 
     /*
     // MARK: - Navigation

@@ -35,6 +35,14 @@ class RegisterViewController: UIViewController {
     
     @IBAction func registerButton(_ sender: Any) {
         
+    //Alert Window Properties
+        
+        let alertController = UIAlertController(title: "Alert", message: "Invalid Username/Password", preferredStyle: .alert)
+
+        let dismissAction = UIAlertAction(title: "Dismiss", style: .cancel) { (dismissAction) in
+            print("Cancel Button pressed")
+        }
+        
         SVProgressHUD.show()
         
     //1. Metodo de Autenticacao
@@ -43,7 +51,14 @@ class RegisterViewController: UIViewController {
             
             if let error = error {
                 
+                
+                alertController.addAction(dismissAction)
+
+                self.present(alertController,animated: true, completion: nil)
+                
                 print("Failed to sign up a user with the email", error.localizedDescription)
+                
+                SVProgressHUD.dismiss()
                 
                 return
                 
@@ -61,16 +76,19 @@ class RegisterViewController: UIViewController {
                     return
                 }
                 
-                print("Sucessfuly signed user up")
+                else {
                 
-                SVProgressHUD.dismiss()
-                
+                    self.performSegue(withIdentifier: "goToGame", sender: self)
+                    
+                    print("Sucessfuly signed user up")
+                    
+                    SVProgressHUD.dismiss()
+                }
             })
            
         }
         
     }
-    
     
     //MARK: - API
     

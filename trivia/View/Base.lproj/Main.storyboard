@@ -67,12 +67,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sV5-Uw-jfc">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="sV5-Uw-jfc">
                                 <rect key="frame" x="117" y="656" width="182" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SQj-9O-6PW" userLabel="LoginButton">
                                 <rect key="frame" x="108" y="703" width="190" height="30"/>
@@ -83,7 +83,6 @@
                                 </state>
                                 <connections>
                                     <action selector="loginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rQl-Ge-UHQ"/>
-                                    <segue destination="TdB-kg-ntN" kind="show" id="poG-y1-VKf"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Login with" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDn-82-zf3">
@@ -133,11 +132,12 @@
                     <connections>
                         <outlet property="emailTextField" destination="cMH-he-sDd" id="xmb-iI-nqA"/>
                         <outlet property="passwordTextField" destination="sV5-Uw-jfc" id="tMx-ME-ago"/>
+                        <segue destination="TdB-kg-ntN" kind="show" identifier="goToGame" id="q4P-gC-e5x"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1001" y="116"/>
+            <point key="canvasLocation" x="999" y="116"/>
         </scene>
         <!--Game-->
         <scene sceneID="x8R-1q-f0b">
@@ -255,14 +255,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i2X-3p-fsW">
                                 <rect key="frame" x="95" y="572" width="226" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="block" translatesAutoresizingMaskIntoConstraints="NO" id="ytV-B8-FG9">
                                 <rect key="frame" x="173" y="188" width="68" height="58"/>
@@ -283,7 +283,6 @@
                                 </state>
                                 <connections>
                                     <action selector="registerButton:" destination="2kW-e8-clz" eventType="touchUpInside" id="RgO-fW-JbF"/>
-                                    <segue destination="TdB-kg-ntN" kind="show" id="0S7-N4-UU4"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FoV-xd-QLH" userLabel="RegisterButton">
@@ -300,6 +299,7 @@
                         <outlet property="emailTextField" destination="FVk-zV-tF1" id="HZ4-ni-g9o"/>
                         <outlet property="passwordTextField" destination="sb7-CN-yB8" id="WbK-zm-7tw"/>
                         <outlet property="usernameTextField" destination="UKZ-GM-S1L" id="AfB-8e-k0b"/>
+                        <segue destination="TdB-kg-ntN" kind="show" identifier="goToGame" id="E1P-6b-mGd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rsv-DM-vRA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -333,6 +333,6 @@
         <image name="twitter" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0S7-N4-UU4"/>
+        <segue reference="E1P-6b-mGd"/>
     </inferredMetricsTieBreakers>
 </document>
