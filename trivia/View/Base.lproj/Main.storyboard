@@ -142,7 +142,7 @@
         <!--Game-->
         <scene sceneID="x8R-1q-f0b">
             <objects>
-                <viewController title="Game" id="TdB-kg-ntN" customClass="GameViewController" customModule="trivia" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="gameVC" title="Game" id="TdB-kg-ntN" customClass="GameViewController" customModule="trivia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tu8-e4-9Dh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -205,6 +205,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="nmF-JF-d0c"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Cv7-V4-Xwn">
+                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="iTH-lo-p5d">
+                            <connections>
+                                <action selector="logOutPressed:" destination="TdB-kg-ntN" id="gJV-Z0-2UE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="abR-Jo-3dc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -213,7 +220,7 @@
         <!--Register-->
         <scene sceneID="hUx-58-9UR">
             <objects>
-                <viewController title="Register" id="2kW-e8-clz" customClass="RegisterViewController" customModule="trivia" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="registerVC" title="Register" id="2kW-e8-clz" customClass="RegisterViewController" customModule="trivia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JWx-TE-GBJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -304,7 +311,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rsv-DM-vRA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1820" y="-362"/>
+            <point key="canvasLocation" x="1809" y="-265"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Eu2-A8-YBf">
