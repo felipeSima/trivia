@@ -22,9 +22,15 @@ class RegisterViewController: UIViewController {
     
     @IBOutlet weak var confirmTextField: UITextField!
     
+    @IBOutlet weak var registerButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        registerButton.layer.cornerRadius = 20
+        registerButton.layer.borderWidth = 2
+        registerButton.layer.borderColor = UIColor.black.cgColor
+        
         // Do any additional setup after loading the view.
     }
     override func didReceiveMemoryWarning() {
@@ -33,19 +39,17 @@ class RegisterViewController: UIViewController {
     
     //MARK: - IBActions
     
-    @IBAction func registerButton(_ sender: Any) {
-        
-    //Alert Window Properties
+    @IBAction func registerButtonPressed(_ sender: Any) {
         
         let alertController = UIAlertController(title: "Alert", message: "Invalid Username/Password", preferredStyle: .alert)
-
+        
         let dismissAction = UIAlertAction(title: "Dismiss", style: .cancel) { (dismissAction) in
             print("Cancel Button pressed")
         }
         
         SVProgressHUD.show()
         
-    //1. Metodo de Autenticacao
+        //1. Metodo de Autenticacao
         
         Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (result, error) in
             
@@ -53,7 +57,7 @@ class RegisterViewController: UIViewController {
                 
                 
                 alertController.addAction(dismissAction)
-
+                
                 self.present(alertController,animated: true, completion: nil)
                 
                 print("Failed to sign up a user with the email", error.localizedDescription)
@@ -75,9 +79,9 @@ class RegisterViewController: UIViewController {
                     
                     return
                 }
-                
+                    
                 else {
-                
+                    
                     self.performSegue(withIdentifier: "goToGame", sender: self)
                     
                     print("Sucessfuly signed user up")
@@ -85,21 +89,68 @@ class RegisterViewController: UIViewController {
                     SVProgressHUD.dismiss()
                 }
             })
-           
+            
         }
-        
     }
     
-    //MARK: - API
     
-    /*
-    // MARK: - Navigation
+//    @IBAction func registerButton(_ sender: Any) {
+//
+//    //Alert Window Properties
+//
+//        let alertController = UIAlertController(title: "Alert", message: "Invalid Username/Password", preferredStyle: .alert)
+//
+//        let dismissAction = UIAlertAction(title: "Dismiss", style: .cancel) { (dismissAction) in
+//            print("Cancel Button pressed")
+//        }
+//
+//        SVProgressHUD.show()
+//
+//    //1. Metodo de Autenticacao
+//
+//        Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (result, error) in
+//
+//            if let error = error {
+//
+//
+//                alertController.addAction(dismissAction)
+//
+//                self.present(alertController,animated: true, completion: nil)
+//
+//                print("Failed to sign up a user with the email", error.localizedDescription)
+//
+//                SVProgressHUD.dismiss()
+//
+//                return
+//
+//            }
+//            guard let uid = result?.user.uid else {return}
+//
+//            let values = ["email" : self.emailTextField.text , "username" : self.usernameTextField.text]
+//
+//            Database.database().reference().child("users").child(uid).updateChildValues(values, withCompletionBlock: { (error, ref) in
+//
+//                if let error = error {
+//
+//                    print("Failed to update database values with error", error.localizedDescription)
+//
+//                    return
+//                }
+//
+//                else {
+//
+//                    self.performSegue(withIdentifier: "goToGame", sender: self)
+//
+//                    print("Sucessfuly signed user up")
+//
+//                    SVProgressHUD.dismiss()
+//                }
+//            })
+//
+//        }
+//
+//    }
+//
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
