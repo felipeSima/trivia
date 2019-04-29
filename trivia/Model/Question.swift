@@ -13,6 +13,8 @@ class Question {
 
     //var difficult: String = ""
     var question = [String]()
-    var answerArray: [(text: JSON, value: Bool)] = []
+    var answerArray = [(text: JSON, value: Bool)]()
+    //var answerArray: [(text: JSON?, value: Bool)] = [(nil,false),(nil,false),(nil,false),(nil,false)]
+    //var answerArray = [(text: JSON?, value: Bool)](repeating: (nil,false), count: 4)
     
 }
