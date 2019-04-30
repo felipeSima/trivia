@@ -169,13 +169,6 @@
                                 <rect key="frame" x="87" y="119" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Question x/10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4tn-AR-LLf">
-                                <rect key="frame" x="289" y="88" width="105" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ofQ-gY-V5Z">
                                 <rect key="frame" x="54" y="486" width="307" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -208,6 +201,13 @@
                                     <action selector="buttonPressed:" destination="TdB-kg-ntN" eventType="touchUpInside" id="3Dw-zU-mdy"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Question x/10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4tn-AR-LLf">
+                                <rect key="frame" x="286" y="85" width="138" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="nmF-JF-d0c"/>
@@ -224,12 +224,14 @@
                         <outlet property="buttonOne" destination="ofQ-gY-V5Z" id="9mX-W8-B0e"/>
                         <outlet property="buttonThree" destination="FFY-Ie-0ci" id="TdD-eH-cxp"/>
                         <outlet property="buttonTwo" destination="lBV-iT-KAD" id="6Xo-xs-KKs"/>
+                        <outlet property="questionNumberTextField" destination="4tn-AR-LLf" id="TgW-Kw-McT"/>
                         <outlet property="questionTextField" destination="gdz-yq-Hn6" id="K3C-b6-0ig"/>
+                        <outlet property="scoreTextField" destination="rxo-4v-JZu" id="9TP-Oy-A2L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="abR-Jo-3dc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2609" y="116"/>
+            <point key="canvasLocation" x="2608.6956521739135" y="115.84821428571428"/>
         </scene>
         <!--Register-->
         <scene sceneID="hUx-58-9UR">

@@ -15,11 +15,13 @@ import SVProgressHUD
 class GameViewController: UIViewController {
     
     //MARK: - INSTANCES INICIALIZATION
-    
-    let allQuestions = Question()
     var bankQuestion = [Question]()
     
     //MARK : - VARIABLES
+    
+    var questionNumber: Int = 0
+    
+    var score: Int = 0
     
     let baseURL = "https://opentdb.com/api.php?amount=20&category=15&type=multiple"
     
@@ -33,6 +35,9 @@ class GameViewController: UIViewController {
     
     @IBOutlet weak var questionTextField: UITextView!
     
+    @IBOutlet weak var questionNumberTextField: UILabel!
+    
+    @IBOutlet weak var scoreTextField: UILabel!
     
     //MARK : - PRE CONFIGURATION
     
@@ -49,6 +54,8 @@ class GameViewController: UIViewController {
 
         getQuestionsData(with: baseURL)
         
+        
+        
     }
     
     
@@ -64,7 +71,6 @@ class GameViewController: UIViewController {
                     //Decoding the Result as a JSON for easy use, as said in the documentation of Swift 4.1
                     let finalJSON = try JSON(data: encodedString)
                     self.updateJson(json: finalJSON)
-                    
                 } catch {return}
 
             }
@@ -80,47 +86,35 @@ class GameViewController: UIViewController {
     func updateJson(json: JSON) {
         //Saving the reference for the Json Array of Questions&Answers
         let data = json["results"]
-        
+
         //Looping over the 20 questions&answers of the JsonData
         for jsonIndex in 0..<data.count {
-            
+            let allQuestions = Question()
             //Saving the question text, number "jsonIndex", to the question property array(of the class Question)
             allQuestions.question.append(data[jsonIndex]["question"].stringValue)
-            
+
             //Saving the 3 incorrect answers in the answerArray Property(of the class Question)
             for answerIndex in 0..<data[jsonIndex]["incorrect_answers"].count {
-                allQuestions.answerArray.append((data[jsonIndex]["incorrect_answers"][answerIndex], false))
+                allQuestions.ansArray.append((data[jsonIndex]["incorrect_answers"][answerIndex].stringValue, false))
             }
             //Saving the correct answers in the last element of the answerArray Property(of the class Question)
-            allQuestions.answerArray.append((data[jsonIndex]["correct_answer"], true))
+            allQuestions.ansArray.append((data[jsonIndex]["correct_answer"].stringValue, true))
+            
+            //Shuffling the answerArray
+            allQuestions.ansArray = allQuestions.ansArray.shuffled()
             
             //Appending to the bankQuestion(of Type: [Question]) as the "jsonIndex" element
             bankQuestion.append(allQuestions)
-            
-            //removing the answers to be rewriten by new questions
-            //allQuestions.answerArray.removeAll()
-            
-            print(bankQuestion[jsonIndex].answerArray.count)
 
+            print("")
+            //Checking the answers
+            print(bankQuestion[jsonIndex].question[0])
+            for i in 0..<bankQuestion[jsonIndex].ansArray.count {
+                print(bankQuestion[jsonIndex].ansArray[i])
+            }
+            
         }
-        
-        
-//        print("")
-//        print(bankQuestion[0].question[0])
-//        print("BankQuestion: \(bankQuestion[0].answerArray[0].text.stringValue)")
-//        print("BankQuestion: \(bankQuestion[0].answerArray[1].text.stringValue)")
-//        print("BankQuestion: \(bankQuestion[0].answerArray[2].text.stringValue)")
-//        print("BankQuestion: \(bankQuestion[0].answerArray[3].text.stringValue)")
-//        print("")
-//        print("")
-//        print(bankQuestion[1].question[1])
-//        print("BankQuestion: \(bankQuestion[1].answerArray[4].text.stringValue)")
-//        print("BankQuestion: \(bankQuestion[1].answerArray[5].text.stringValue)")
-//        print("BankQuestion: \(bankQuestion[1].answerArray[6].text.stringValue)")
-//        print("BankQuestion: \(bankQuestion[1].answerArray[7].text.stringValue)")
-//        print("")
         updateUI()
-     
     }
     
     
@@ -149,24 +143,59 @@ class GameViewController: UIViewController {
     
     func checkAnswer(index: Int) {
         
-        if bankQuestion[0].answerArray[index].value == true {
-            updateUI()
+        if bankQuestion[questionNumber].ansArray[index].value == true {
             print("right answer")
+            score += 10
+            questionNumber += 1
+            updateUI()
         }
         else  {
             print("wrong answer")
+            questionNumber += 1
             updateUI()
         }
     }
     
     func updateUI () {
-        questionTextField.text = bankQuestion[0].question[0]
-        buttonOne.setTitle(bankQuestion[0].answerArray[0].text.stringValue, for: .normal)
-        buttonTwo.setTitle(bankQuestion[0].answerArray[1].text.stringValue, for: .normal)
-        buttonThree.setTitle(bankQuestion[0].answerArray[2].text.stringValue, for: .normal)
-        buttonFour.setTitle(bankQuestion[0].answerArray[3].text.stringValue, for: .normal)
+        
+        if questionNumber < bankQuestion.count{
+            
+            questionNumberTextField.text = "Question: \(questionNumber + 1)/\(bankQuestion.count)"
+            scoreTextField.text = "Score: \(score)"
+            questionTextField.text = bankQuestion[questionNumber].question[0]
+            buttonOne.setTitle(bankQuestion[questionNumber].ansArray[0].text, for: .normal)
+            buttonTwo.setTitle(bankQuestion[questionNumber].ansArray[1].text, for: .normal)
+            buttonThree.setTitle(bankQuestion[questionNumber].ansArray[2].text, for: .normal)
+            buttonFour.setTitle(bankQuestion[questionNumber].ansArray[3].text, for: .normal)
+        }
+            
+        else {
+            
+            scoreTextField.text = "Score: \(score)"
+            alertPopUp()
+        }
+        
     }
     
+    func alertPopUp() {
+        let alertController = UIAlertController.init(title: "Awesome!", message: "You Made it. Would you like to start over?", preferredStyle: .alert)
+        let alertAction = UIAlertAction.init(title: "Play Again", style: .default) { (alertAction) in
+            self.startOver()
+        }
+        let cancelAction = UIAlertAction.init(title: "I stop at my deyDay", style: .cancel) { (cancelAction) in
+            print("EndGame")
+        }
+        alertController.addAction(alertAction)
+        alertController.addAction(cancelAction)
+        present(alertController, animated: true, completion: nil)
+
+    }
+    
+    func startOver() {
+        questionNumber = 0
+        bankQuestion = bankQuestion.shuffled()
+        updateUI()
+    }
     
     // MARK : - LogOut Session
     
